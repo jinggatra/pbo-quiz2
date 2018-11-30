@@ -9,7 +9,6 @@ package com.taufik.kuis2;
  *
  * @author J I N G G A
  */
-
 import java.util.* ;
 import java.text.SimpleDateFormat ;
 import java.util.ArrayList ;
@@ -19,15 +18,17 @@ import java.util.stream.Stream;
 
 
 public class Transaksi {
-    private final String kode;
-    private ArrayList<Item> items = new ArrayList<>();
-    private double total;
+    private final String kode; // Variable kode untuk menampilkan kode pembayaran
+    private ArrayList<Item> items = new ArrayList<>(); //Variable item untuk menampilkan item yang dibeli
+    private double total; // Variable total untuk menampilkan total pembelian
 
+    //Konstruktor
     public Transaksi(String kode, ArrayList<Item> items) {
         this.kode = kode;
         this.items = items;
     }
     
+    //Setter untuk total
     public void setTotal(){
         double total = 0;
         for (Item item : items) {
@@ -36,6 +37,7 @@ public class Transaksi {
         this.total = total;
     }
     
+    //Hasil pada transaksi
     public String Bayar(){
         setTotal();
         String obt = "";
